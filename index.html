@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x3 Rubik's Cube Project TIK</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Memuat Pustaka Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <!-- Area Kanvas 3D Rubik -->
+        <div id="canvas-container"></div>
+
+        <!-- Panel Kontrol Samping (Sidebar) -->
+        <div id="sidebar">
+            <h2>Rubik's Cube 3x3</h2>
+            <p class="desc">Project TIK Simulasi Permainan Rubik 3 Dimensi interaktif dengan HTML, CSS, dan JavaScript.</p>
+
+            <button class="action-btn" onclick="scrambleCube()">Scramble (Acak)</button>
+            <div class="history-controls">
+                <button type="button" onclick="undoMove()" aria-label="Undo gerakan terakhir">Undo</button>
+                <button type="button" onclick="redoMove()" aria-label="Ulangi gerakan yang dibatalkan">Redo</button>
+            </div>
+            <button class="action-btn" style="background-color: #51cf66;" onclick="resetCube()">Reset Rubik</button>
+
+            <div class="section-title" style="margin-top: 15px;">Rumus Gerakan (Notation)</div>
+            <div class="grid-moves">
+                <button onclick="rotateMove('U')">U</button>
+                <button onclick="rotateMove('UPrime')">U'</button>
+                <button onclick="rotateMove('D')">D</button>
+                <button onclick="rotateMove('DPrime')">D'</button>
+                
+                <button onclick="rotateMove('R')">R</button>
+                <button onclick="rotateMove('RPrime')">R'</button>
+                <button onclick="rotateMove('L')">L</button>
+                <button onclick="rotateMove('LPrime')">L'</button>
+                
+                <button onclick="rotateMove('F')">F</button>
+                <button onclick="rotateMove('FPrime')">F'</button>
+                <button onclick="rotateMove('B')">B</button>
+                <button onclick="rotateMove('BPrime')">B'</button>
+            </div>
+
+            <div class="section-title">Kontrol Kamera POV</div>
+            <button class="camera-btn" onclick="resetCamera()">Reset Posisi Kamera</button>
+
+            <div class="instruction-box">
+                <b>Panduan Kontrol:</b>
+                <ul style="margin: 5px 0 0 -15px; padding-left: 15px;">
+                    <li><b>Putar Kamera:</b> Klik Kanan + Geser (Drag) mouse.</li>
+                    <li><b>Putar Rubik:</b> Klik Kiri pada stiker, lalu geser ke arah gerakan yang diinginkan.</li>
+                    <li><b>Undo/Redo:</b> Gunakan tombol Undo dan Redo untuk menelusuri gerakan.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
